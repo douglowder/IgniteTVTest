@@ -1,5 +1,6 @@
 import React, { ComponentType, forwardRef, Ref, useImperativeHandle, useRef } from "react"
 import {
+  Platform,
   StyleProp,
   TextInput,
   TextInputProps,
@@ -166,6 +167,8 @@ export const TextField = forwardRef(function TextField(props: TextFieldProps, re
 
   useImperativeHandle(ref, () => input.current as TextInput)
 
+  const isMultiline = (TextInput.multiline && !Platform.isTV) ?? false
+
   return (
     <TouchableOpacity
       activeOpacity={1}
@@ -190,7 +193,7 @@ export const TextField = forwardRef(function TextField(props: TextFieldProps, re
             style={$leftAccessoryStyle}
             status={status}
             editable={!disabled}
-            multiline={TextInputProps.multiline ?? false}
+            multiline={isMultiline}
           />
         )}
 
@@ -203,6 +206,7 @@ export const TextField = forwardRef(function TextField(props: TextFieldProps, re
           {...TextInputProps}
           editable={!disabled}
           style={$inputStyles}
+          multiline={isMultiline}
         />
 
         {!!RightAccessory && (
@@ -210,7 +214,7 @@ export const TextField = forwardRef(function TextField(props: TextFieldProps, re
             style={$rightAccessoryStyle}
             status={status}
             editable={!disabled}
-            multiline={TextInputProps.multiline ?? false}
+            multiline={isMultiline}
           />
         )}
       </View>
