@@ -65,8 +65,8 @@ const WebListItem: FC<DemoListItem> = ({ item, sectionIndex }) => {
 }
 
 const NativeListItem: FC<DemoListItem> = ({ item, sectionIndex, handleScroll }) => (
-  <View>
-    <Text onPress={() => handleScroll?.(sectionIndex)} preset="bold" style={$menuContainer}>
+  <View style={$menuContainer}>
+    <Text onPress={() => handleScroll?.(sectionIndex)} preset="bold" style={$menuContainerText}>
       {item.name}
     </Text>
     {item.useCases.map((u, index) => (
@@ -267,8 +267,12 @@ const $menuContainer: ViewStyle = {
   paddingTop: spacing.lg,
 }
 
+const $menuContainerText: TextStyle = {
+  fontSize: spacing.sm,
+}
+
 const $demoItemName: TextStyle = {
-  fontSize: 24,
+  fontSize: spacing.lg,
   marginBottom: spacing.md,
 }
 

@@ -102,9 +102,9 @@ const $tabBarItem: ViewStyle = {
 }
 
 const $tabBarLabel: TextStyle = {
-  fontSize: 12,
+  fontSize: spacing.sm,
   fontFamily: typography.primary.medium,
-  lineHeight: 16,
+  lineHeight: spacing.md,
   flex: 1,
 }
 
