@@ -80,6 +80,60 @@ const NativeListItem: FC<DemoListItem> = ({ item, sectionIndex, handleScroll }) 
   </View>
 )
 
+const ShowroomDemoList = (_props: any) => {
+  const handleScroll = _props.handleScroll
+  return (
+    <View style={[$drawer, _props.additionalStyle ?? {}]}>
+      <View style={$logoContainer}>
+        <Image source={logo} style={$logoImage} />
+      </View>
+
+      <ListView<DemoListItem["item"]>
+        ref={_props.menuRef}
+        contentContainerStyle={$listContentContainer}
+        estimatedItemSize={250}
+        data={Object.values(Demos).map((d) => ({
+          name: d.name,
+          useCases: d.data.map((u) => u.props.name as string),
+        }))}
+        keyExtractor={(item) => item.name}
+        renderItem={({ item, index: sectionIndex }) => (
+          <ShowroomListItem {...{ item, sectionIndex, handleScroll }} />
+        )}
+      />
+    </View>
+  )
+}
+
+const ShowroomDemos = (_props: any) => {
+  return (
+    <SectionList
+      ref={_props.listRef}
+      contentContainerStyle={$sectionListContentContainer}
+      stickySectionHeadersEnabled={false}
+      sections={Object.values(Demos)}
+      renderItem={({ item }) => item}
+      renderSectionFooter={() => <View style={$demoUseCasesSpacer} />}
+      ListHeaderComponent={
+        <View style={$heading}>
+          <Text preset="heading" tx="demoShowroomScreen.jumpStart" />
+        </View>
+      }
+      onScrollToIndexFailed={_props.scrollToIndexFailed}
+      renderSectionHeader={({ section }) => {
+        return (
+          <View>
+            <Text preset="heading" style={$demoItemName}>
+              {section.name}
+            </Text>
+            <Text style={$demoItemDescription}>{section.description}</Text>
+          </View>
+        )
+      }}
+    />
+  )
+}
+
 const ShowroomListItem = Platform.select({ web: WebListItem, default: NativeListItem })
 
 export const DemoShowroomScreen: FC<DemoTabScreenProps<"DemoShowroom">> =
@@ -157,6 +211,16 @@ export const DemoShowroomScreen: FC<DemoTabScreenProps<"DemoShowroom">> =
 
     const $drawerInsets = useSafeAreaInsetsStyle(["top"])
 
+    if (Platform.isTV) {
+      return (
+        <View style={$tvScreenContainer}>
+          <ShowroomDemoList menuRef={menuRef} handleScroll={handleScroll} />
+          <View style={$tvMainContentContainer}>
+            <ShowroomDemos listRef={listRef} scrollToIndexFailed={scrollToIndexFailed} />
+          </View>
+        </View>
+      )
+    }
     return (
       <DrawerLayout
         ref={drawerRef}
@@ -176,54 +240,17 @@ export const DemoShowroomScreen: FC<DemoTabScreenProps<"DemoShowroom">> =
           }
         }}
         renderNavigationView={() => (
-          <View style={[$drawer, $drawerInsets]}>
-            <View style={$logoContainer}>
-              <Image source={logo} style={$logoImage} />
-            </View>
-
-            <ListView<DemoListItem["item"]>
-              ref={menuRef}
-              contentContainerStyle={$listContentContainer}
-              estimatedItemSize={250}
-              data={Object.values(Demos).map((d) => ({
-                name: d.name,
-                useCases: d.data.map((u) => u.props.name as string),
-              }))}
-              keyExtractor={(item) => item.name}
-              renderItem={({ item, index: sectionIndex }) => (
-                <ShowroomListItem {...{ item, sectionIndex, handleScroll }} />
-              )}
-            />
-          </View>
+          <ShowroomDemoList
+            additionalStyle={$drawerInsets}
+            menuRef={menuRef}
+            handleScroll={handleScroll}
+          />
         )}
       >
         <Screen preset="fixed" safeAreaEdges={["top"]} contentContainerStyle={$screenContainer}>
           <DrawerIconButton onPress={toggleDrawer} {...{ open, progress }} />
 
-          <SectionList
-            ref={listRef}
-            contentContainerStyle={$sectionListContentContainer}
-            stickySectionHeadersEnabled={false}
-            sections={Object.values(Demos)}
-            renderItem={({ item }) => item}
-            renderSectionFooter={() => <View style={$demoUseCasesSpacer} />}
-            ListHeaderComponent={
-              <View style={$heading}>
-                <Text preset="heading" tx="demoShowroomScreen.jumpStart" />
-              </View>
-            }
-            onScrollToIndexFailed={scrollToIndexFailed}
-            renderSectionHeader={({ section }) => {
-              return (
-                <View>
-                  <Text preset="heading" style={$demoItemName}>
-                    {section.name}
-                  </Text>
-                  <Text style={$demoItemDescription}>{section.description}</Text>
-                </View>
-              )
-            }}
-          />
+          <ShowroomDemos listRef={listRef} scrollToIndexFailed={scrollToIndexFailed} />
         </Screen>
       </DrawerLayout>
     )
@@ -231,6 +258,17 @@ export const DemoShowroomScreen: FC<DemoTabScreenProps<"DemoShowroom">> =
 
 const $screenContainer: ViewStyle = {
   flex: 1,
+}
+
+const $tvScreenContainer: ViewStyle = {
+  flex: 1,
+  flexDirection: "row",
+  width: "100%",
+  margin: spacing.md,
+}
+
+const $tvMainContentContainer: ViewStyle = {
+  flex: 4,
 }
 
 const $drawer: ViewStyle = {
