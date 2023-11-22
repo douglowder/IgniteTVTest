@@ -60,6 +60,7 @@
           "showVerboseWarnings": true
         }
       ],
+      "expo-font",
       "expo-localization",
       [
         "expo-build-properties",
