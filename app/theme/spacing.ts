@@ -3,7 +3,7 @@
  */
 import { Platform } from "react-native"
 
-const scale = Platform.isTV && Platform.OS === "ios" ? 1.7 : 1
+const scale = Platform.isTV ? (Platform.OS === "ios" ? 1.5 : 0.7) : 1
 
 export const spacing = {
   xxxs: 2 * scale,
@@ -15,6 +15,7 @@ export const spacing = {
   xl: 32 * scale,
   xxl: 48 * scale,
   xxxl: 64 * scale,
+  scale,
 } as const
 
 export type Spacing = keyof typeof spacing
