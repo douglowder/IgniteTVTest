@@ -556,9 +556,9 @@ const $inputWrapper: ViewStyle = {
 }
 
 const $inputOuterBase: ViewStyle = {
-  height: 24 * spacing.scale,
-  width: 24 * spacing.scale,
-  borderWidth: 2 * spacing.scale,
+  height: spacing._24,
+  width: spacing._24,
+  borderWidth: spacing._2,
   alignItems: "center",
   overflow: "hidden",
   flexGrow: 0,
@@ -568,14 +568,14 @@ const $inputOuterBase: ViewStyle = {
 }
 
 const $inputOuterVariants: Record<Variants, StyleProp<ViewStyle>> = {
-  checkbox: [$inputOuterBase, { borderRadius: 4 * spacing.scale }],
-  radio: [$inputOuterBase, { borderRadius: 12 * spacing.scale }],
+  checkbox: [$inputOuterBase, { borderRadius: spacing._4 }],
+  radio: [$inputOuterBase, { borderRadius: spacing._12 }],
   switch: [
     $inputOuterBase,
     {
-      height: 32 * spacing.scale,
-      width: 56 * spacing.scale,
-      borderRadius: 16 * spacing.scale,
+      height: spacing._32,
+      width: spacing._56,
+      borderRadius: spacing._16,
       borderWidth: 0,
     },
   ],
@@ -590,8 +590,8 @@ const $checkboxInner: ViewStyle = {
 }
 
 const $checkboxDetail: ImageStyle = {
-  width: 20 * spacing.scale,
-  height: 20 * spacing.scale,
+  width: spacing._20,
+  height: spacing._20,
   resizeMode: "contain",
 }
 
@@ -604,9 +604,9 @@ const $radioInner: ViewStyle = {
 }
 
 const $radioDetail: ViewStyle = {
-  width: 12 * spacing.scale,
-  height: 12 * spacing.scale,
-  borderRadius: 6 * spacing.scale,
+  width: spacing._12,
+  height: spacing._12,
+  borderRadius: spacing._6,
 }
 
 const $switchInner: ViewStyle = {
@@ -616,15 +616,15 @@ const $switchInner: ViewStyle = {
   borderColor: colors.transparent,
   overflow: "hidden",
   position: "absolute",
-  paddingStart: 4 * spacing.scale,
-  paddingEnd: 4 * spacing.scale,
+  paddingStart: spacing._4,
+  paddingEnd: spacing._4,
 }
 
 const $switchDetail: SwitchToggleProps["inputDetailStyle"] = {
-  borderRadius: 12 * spacing.scale,
+  borderRadius: spacing._12,
   position: "absolute",
-  width: 24 * spacing.scale,
-  height: 24 * spacing.scale,
+  width: spacing._24,
+  height: spacing._24,
 }
 
 const $helper: TextStyle = {
@@ -650,19 +650,19 @@ const $switchAccessibility: TextStyle = {
 }
 
 const $switchAccessibilityIcon: ImageStyle = {
-  width: 14 * spacing.scale,
-  height: 14 * spacing.scale,
+  width: spacing._14,
+  height: spacing._14,
   resizeMode: "contain",
 }
 
 const $switchAccessibilityLine: ViewStyle = {
-  width: 2 * spacing.scale,
-  height: 12 * spacing.scale,
+  width: spacing._2,
+  height: spacing._12,
 }
 
 const $switchAccessibilityCircle: ViewStyle = {
-  borderWidth: 2 * spacing.scale,
-  width: 12 * spacing.scale,
-  height: 12 * spacing.scale,
-  borderRadius: 6 * spacing.scale,
+  borderWidth: spacing._2,
+  width: spacing._12,
+  height: spacing._12,
+  borderRadius: spacing._6,
 }

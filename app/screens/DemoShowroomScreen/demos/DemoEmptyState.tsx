@@ -28,7 +28,7 @@ export const DemoEmptyState: Demo = {
         content="You can pass in any image source."
       />
 
-      <DemoDivider size={30 * spacing.scale} line />
+      <DemoDivider size={spacing._30} line />
 
       <EmptyState
         heading="Via `heading` Prop"
@@ -36,7 +36,7 @@ export const DemoEmptyState: Demo = {
         button="Via `button` Prop"
       />
 
-      <DemoDivider size={30 * spacing.scale} line />
+      <DemoDivider size={spacing._30} line />
 
       <EmptyState
         headingTx="demoShowroomScreen.demoViaSpecifiedTxProp"
@@ -51,8 +51,8 @@ export const DemoEmptyState: Demo = {
     <DemoUseCase name="Styling" description="The component can be styled easily.">
       <EmptyState
         preset="generic"
-        style={{ backgroundColor: colors.error, paddingVertical: 20 * spacing.scale }}
-        imageStyle={{ height: 75 * spacing.scale, tintColor: colors.palette.neutral100 }}
+        style={{ backgroundColor: colors.error, paddingVertical: spacing._20 }}
+        imageStyle={{ height: spacing._75, tintColor: colors.palette.neutral100 }}
         ImageProps={{ resizeMode: "contain" }}
         headingStyle={{
           color: colors.palette.neutral100,

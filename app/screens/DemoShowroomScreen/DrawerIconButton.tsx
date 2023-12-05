@@ -24,7 +24,7 @@ export function DrawerIconButton(props: DrawerIconButtonProps) {
     const translateX = interpolate(
       progress.value,
       [0, 1],
-      [0, isRTL ? 60 * spacing.scale : -60 * spacing.scale],
+      [0, isRTL ? spacing._60 : -spacing._60],
     )
 
     return {
@@ -50,7 +50,7 @@ export function DrawerIconButton(props: DrawerIconButtonProps) {
 
   const animatedMiddleBarStyles = useAnimatedStyle(() => {
     const backgroundColor = interpolateColor(progress.value, [0, 1], [colors.text, colors.tint])
-    const width = interpolate(progress.value, [0, 1], [18 * spacing.scale, 16 * spacing.scale])
+    const width = interpolate(progress.value, [0, 1], [spacing._18, spacing._16])
 
     return {
       backgroundColor,
@@ -59,11 +59,11 @@ export function DrawerIconButton(props: DrawerIconButtonProps) {
   })
 
   const animatedBottomBarStyles = useAnimatedStyle(() => {
-    const marginTop = interpolate(progress.value, [0, 1], [4 * spacing.scale, 2 * spacing.scale])
+    const marginTop = interpolate(progress.value, [0, 1], [spacing._4, spacing._2])
     const backgroundColor = interpolateColor(progress.value, [0, 1], [colors.text, colors.tint])
-    const marginStart = interpolate(progress.value, [0, 1], [0, -11.5 * spacing.scale])
+    const marginStart = interpolate(progress.value, [0, 1], [0, -spacing._12])
     const rotate = interpolate(progress.value, [0, 1], [0, isRTL ? -45 : 45])
-    const width = interpolate(progress.value, [0, 1], [18 * spacing.scale, 12 * spacing.scale])
+    const width = interpolate(progress.value, [0, 1], [spacing._18, spacing._12])
 
     return {
       backgroundColor,
@@ -89,13 +89,13 @@ export function DrawerIconButton(props: DrawerIconButtonProps) {
   )
 }
 
-const barHeight = 2 * spacing.scale
+const barHeight = spacing._2
 
 const $container: ViewStyle = {
   alignItems: "center",
-  height: 56 * spacing.scale,
+  height: spacing._56,
   justifyContent: "center",
-  width: 56 * spacing.scale,
+  width: spacing._56,
 }
 
 const $topBar: ViewStyle = {

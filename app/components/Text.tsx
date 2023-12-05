@@ -73,13 +73,13 @@ export function Text(props: TextProps) {
 }
 
 const $sizeStyles = {
-  xxl: { fontSize: 36 * spacing.scale, lineHeight: 44 * spacing.scale } satisfies TextStyle,
-  xl: { fontSize: 24 * spacing.scale, lineHeight: 34 * spacing.scale } satisfies TextStyle,
-  lg: { fontSize: 20 * spacing.scale, lineHeight: 32 * spacing.scale } satisfies TextStyle,
-  md: { fontSize: 18 * spacing.scale, lineHeight: 26 * spacing.scale } satisfies TextStyle,
-  sm: { fontSize: 16 * spacing.scale, lineHeight: 24 * spacing.scale } satisfies TextStyle,
-  xs: { fontSize: 14 * spacing.scale, lineHeight: 21 * spacing.scale } satisfies TextStyle,
-  xxs: { fontSize: 12 * spacing.scale, lineHeight: 18 * spacing.scale } satisfies TextStyle,
+  xxl: { fontSize: spacing._36, lineHeight: spacing._44 } satisfies TextStyle,
+  xl: { fontSize: spacing._24, lineHeight: spacing._34 } satisfies TextStyle,
+  lg: { fontSize: spacing._20, lineHeight: spacing._32 } satisfies TextStyle,
+  md: { fontSize: spacing._18, lineHeight: spacing._26 } satisfies TextStyle,
+  sm: { fontSize: spacing._16, lineHeight: spacing._24 } satisfies TextStyle,
+  xs: { fontSize: spacing._14, lineHeight: spacing._21 } satisfies TextStyle,
+  xxs: { fontSize: spacing._12, lineHeight: spacing._18 } satisfies TextStyle,
 }
 
 const $fontWeightStyles = Object.entries(typography.primary).reduce((acc, [weight, fontFamily]) => {

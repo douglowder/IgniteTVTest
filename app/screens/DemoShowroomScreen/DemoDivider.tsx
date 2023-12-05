@@ -13,7 +13,7 @@ interface DemoDividerProps {
 export function DemoDivider(props: DemoDividerProps) {
   const {
     type = "horizontal",
-    size = 10 * spacing.scale,
+    size = spacing._10,
     line = false,
     style: $styleOverride,
   } = props
@@ -32,16 +32,16 @@ export function DemoDivider(props: DemoDividerProps) {
           style={[
             $line,
             type === "horizontal" && {
-              width: 150 * spacing.scale,
-              height: 1 * spacing.scale,
-              marginStart: -75 * spacing.scale,
-              marginTop: -1 * spacing.scale,
+              width: spacing._150,
+              height: spacing._1,
+              marginStart: -spacing._75,
+              marginTop: -spacing._1,
             },
             type === "vertical" && {
-              height: 50 * spacing.scale,
-              width: 1 * spacing.scale,
-              marginTop: -25 * spacing.scale * spacing.scale * spacing.scale,
-              marginStart: -1 * spacing.scale,
+              height: spacing._50,
+              width: spacing._1,
+              marginTop: -spacing._25,
+              marginStart: -spacing._1,
             },
           ]}
         />

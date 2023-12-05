@@ -7,8 +7,8 @@ import { Demo } from "../DemoShowroomScreen"
 import { DemoDivider } from "../DemoDivider"
 import { DemoUseCase } from "../DemoUseCase"
 
-const $iconStyle: ImageStyle = { width: 30 * spacing.scale, height: 30 * spacing.scale }
-const $customButtonStyle: ViewStyle = { backgroundColor: colors.error, height: 100 * spacing.scale }
+const $iconStyle: ImageStyle = { width: spacing._30, height: spacing._30 }
+const $customButtonStyle: ViewStyle = { backgroundColor: colors.error, height: spacing._100 }
 const $customButtonPressedStyle: ViewStyle = { backgroundColor: colors.error }
 const $customButtonTextStyle: TextStyle = {
   color: colors.error,

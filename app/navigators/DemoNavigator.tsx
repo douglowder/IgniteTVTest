@@ -47,7 +47,7 @@ export function DemoNavigator() {
       screenOptions={{
         headerShown: false,
         tabBarHideOnKeyboard: true,
-        tabBarStyle: [$tabBar, { height: bottom + 70 * spacing.scale }],
+        tabBarStyle: [$tabBar, { height: bottom + spacing._70 }],
         tabBarActiveTintColor: colors.tint,
         tabBarInactiveTintColor: colors.text,
         tabBarLabelStyle: $tabBarLabel,
@@ -61,11 +61,7 @@ export function DemoNavigator() {
           tabBarButton,
           tabBarLabel: translate("demoNavigator.componentsTab"),
           tabBarIcon: ({ focused }) => (
-            <Icon
-              icon="components"
-              color={focused ? colors.tint : undefined}
-              size={30 * spacing.scale}
-            />
+            <Icon icon="components" color={focused ? colors.tint : undefined} size={spacing._30} />
           ),
         }}
       />
@@ -77,11 +73,7 @@ export function DemoNavigator() {
           tabBarButton,
           tabBarLabel: translate("demoNavigator.communityTab"),
           tabBarIcon: ({ focused }) => (
-            <Icon
-              icon="community"
-              color={focused ? colors.tint : undefined}
-              size={30 * spacing.scale}
-            />
+            <Icon icon="community" color={focused ? colors.tint : undefined} size={spacing._30} />
           ),
         }}
       />
@@ -94,11 +86,7 @@ export function DemoNavigator() {
           tabBarButton,
           tabBarLabel: translate("demoNavigator.podcastListTab"),
           tabBarIcon: ({ focused }) => (
-            <Icon
-              icon="podcast"
-              color={focused ? colors.tint : undefined}
-              size={30 * spacing.scale}
-            />
+            <Icon icon="podcast" color={focused ? colors.tint : undefined} size={spacing._30} />
           ),
         }}
       />
@@ -110,11 +98,7 @@ export function DemoNavigator() {
           tabBarLabel: translate("demoNavigator.debugTab"),
           tabBarButton,
           tabBarIcon: ({ focused }) => (
-            <Icon
-              icon="debug"
-              color={focused ? colors.tint : undefined}
-              size={30 * spacing.scale}
-            />
+            <Icon icon="debug" color={focused ? colors.tint : undefined} size={spacing._30} />
           ),
         }}
       />
