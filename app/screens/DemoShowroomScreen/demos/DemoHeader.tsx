@@ -2,7 +2,7 @@
 import React from "react"
 import { TextStyle, View, ViewStyle } from "react-native"
 import { Header, Icon } from "../../../components"
-import { colors } from "../../../theme"
+import { colors, spacing } from "../../../theme"
 import { Demo } from "../DemoShowroomScreen"
 import { DemoDivider } from "../DemoDivider"
 import { DemoUseCase } from "../DemoUseCase"
@@ -40,9 +40,9 @@ export const DemoHeader: Demo = {
       description="You can easily pass in icons to the left or right action components."
     >
       <Header title="Left Icon" leftIcon="ladybug" safeAreaEdges={[]} />
-      <DemoDivider size={24} />
+      <DemoDivider size={24 * spacing.scale} />
       <Header title="Right Icon" rightIcon="ladybug" safeAreaEdges={[]} />
-      <DemoDivider size={24} />
+      <DemoDivider size={24 * spacing.scale} />
       <Header title="Both Icons" leftIcon="ladybug" rightIcon="ladybug" safeAreaEdges={[]} />
     </DemoUseCase>,
 
@@ -55,7 +55,7 @@ export const DemoHeader: Demo = {
         leftTx="demoShowroomScreen.demoHeaderTxExample"
         safeAreaEdges={[]}
       />
-      <DemoDivider size={24} />
+      <DemoDivider size={24 * spacing.scale} />
       <Header title="Via `rightText`" rightText="Yay" safeAreaEdges={[]} />
     </DemoUseCase>,
 
@@ -100,10 +100,10 @@ export const DemoHeader: Demo = {
         title="Styled Wrapper"
         titleStyle={$customWhiteTitle}
         backgroundColor={colors.error}
-        style={{ height: 35 }}
+        style={{ height: 35 * spacing.scale }}
         safeAreaEdges={[]}
       />
-      <DemoDivider size={24} />
+      <DemoDivider size={24 * spacing.scale} />
       <Header
         title="Tinted Icons"
         titleStyle={$customWhiteTitle}

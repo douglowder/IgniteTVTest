@@ -307,12 +307,12 @@ const $heading: ViewStyle = {
 const $item: ViewStyle = {
   padding: spacing.md,
   marginTop: spacing.md,
-  minHeight: 120,
+  minHeight: 120 * spacing.scale,
 }
 
 const $itemThumbnail: ImageStyle = {
   marginTop: spacing.sm,
-  borderRadius: 50,
+  borderRadius: 50 * spacing.scale,
   alignSelf: "flex-start",
 }
 
@@ -325,8 +325,8 @@ const $labelStyle: TextStyle = {
 }
 
 const $iconContainer: ViewStyle = {
-  height: ICON_SIZE,
-  width: ICON_SIZE,
+  height: ICON_SIZE * spacing.scale,
+  width: ICON_SIZE * spacing.scale,
   flexDirection: "row",
   marginEnd: spacing.sm,
 }
@@ -344,7 +344,7 @@ const $metadataText: TextStyle = {
 }
 
 const $favoriteButton: ViewStyle = {
-  borderRadius: 17,
+  borderRadius: 17 * spacing.scale,
   marginTop: spacing.md,
   justifyContent: "flex-start",
   backgroundColor: colors.palette.neutral300,
@@ -352,7 +352,7 @@ const $favoriteButton: ViewStyle = {
   paddingHorizontal: spacing.md,
   paddingTop: spacing.xxxs,
   paddingBottom: 0,
-  minHeight: 32,
+  minHeight: 32 * spacing.scale,
   alignSelf: "flex-start",
 }
 

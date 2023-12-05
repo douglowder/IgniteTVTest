@@ -88,23 +88,23 @@ const $bottomContainer: ViewStyle = {
   flexGrow: 0,
   flexBasis: "43%",
   backgroundColor: colors.palette.neutral100,
-  borderTopLeftRadius: 16,
-  borderTopRightRadius: 16,
+  borderTopLeftRadius: 16 * spacing.scale,
+  borderTopRightRadius: 16 * spacing.scale,
   paddingHorizontal: spacing.lg,
   justifyContent: "space-around",
 }
 const $welcomeLogo: ImageStyle = {
-  height: 88,
+  height: 88 * spacing.scale,
   width: "100%",
   marginBottom: spacing.xxl,
 }
 
 const $welcomeFace: ImageStyle = {
-  height: 169,
-  width: 269,
+  height: 169 * spacing.scale,
+  width: 269 * spacing.scale,
   position: "absolute",
-  bottom: -47,
-  right: -80,
+  bottom: -47 * spacing.scale,
+  right: -80 * spacing.scale,
   transform: [{ scaleX: isRTL ? -1 : 1 }],
 }
 

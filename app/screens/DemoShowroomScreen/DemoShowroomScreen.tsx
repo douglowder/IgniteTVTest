@@ -91,7 +91,7 @@ const ShowroomDemoList = (_props: any) => {
       <ListView<DemoListItem["item"]>
         ref={_props.menuRef}
         contentContainerStyle={$listContentContainer}
-        estimatedItemSize={250}
+        estimatedItemSize={250 * spacing.scale}
         data={Object.values(Demos).map((d) => ({
           name: d.name,
           useCases: d.data.map((u) => u.props.name as string),
@@ -224,7 +224,10 @@ export const DemoShowroomScreen: FC<DemoTabScreenProps<"DemoShowroom">> =
     return (
       <DrawerLayout
         ref={drawerRef}
-        drawerWidth={Platform.select({ default: 326, web: Dimensions.get("window").width * 0.3 })}
+        drawerWidth={Platform.select({
+          default: 326 * spacing.scale,
+          web: Dimensions.get("window").width * 0.3,
+        })}
         drawerType={"slide"}
         drawerPosition={isRTL ? "right" : "left"}
         overlayColor={open ? colors.palette.overlay20 : "transparent"}
@@ -289,14 +292,14 @@ const $heading: ViewStyle = {
 }
 
 const $logoImage: ImageStyle = {
-  height: 42,
-  width: 77,
+  height: 42 * spacing.scale,
+  width: 77 * spacing.scale,
 }
 
 const $logoContainer: ViewStyle = {
   alignSelf: "flex-start",
   justifyContent: "center",
-  height: 56,
+  height: 56 * spacing.scale,
   paddingHorizontal: spacing.lg,
 }
 

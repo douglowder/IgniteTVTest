@@ -144,8 +144,8 @@ const $buttonContainer: ViewStyle = {
 
 const $hint: TextStyle = {
   color: colors.palette.neutral600,
-  fontSize: 12,
-  lineHeight: 15,
+  fontSize: 12 * spacing.scale,
+  lineHeight: 15 * spacing.scale,
   paddingBottom: spacing.lg,
 }
 

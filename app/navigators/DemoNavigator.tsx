@@ -5,7 +5,7 @@ import {
 } from "@react-navigation/bottom-tabs"
 import { CompositeScreenProps } from "@react-navigation/native"
 import React from "react"
-import { Pressable, TextStyle, TouchableOpacity, ViewStyle } from "react-native"
+import { Pressable, TextStyle, ViewStyle } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { Icon } from "../components"
 import { translate } from "../i18n"
@@ -47,7 +47,7 @@ export function DemoNavigator() {
       screenOptions={{
         headerShown: false,
         tabBarHideOnKeyboard: true,
-        tabBarStyle: [$tabBar, { height: bottom + 70 }],
+        tabBarStyle: [$tabBar, { height: bottom + 70 * spacing.scale }],
         tabBarActiveTintColor: colors.tint,
         tabBarInactiveTintColor: colors.text,
         tabBarLabelStyle: $tabBarLabel,
@@ -61,7 +61,11 @@ export function DemoNavigator() {
           tabBarButton,
           tabBarLabel: translate("demoNavigator.componentsTab"),
           tabBarIcon: ({ focused }) => (
-            <Icon icon="components" color={focused ? colors.tint : undefined} size={30} />
+            <Icon
+              icon="components"
+              color={focused ? colors.tint : undefined}
+              size={30 * spacing.scale}
+            />
           ),
         }}
       />
@@ -73,7 +77,11 @@ export function DemoNavigator() {
           tabBarButton,
           tabBarLabel: translate("demoNavigator.communityTab"),
           tabBarIcon: ({ focused }) => (
-            <Icon icon="community" color={focused ? colors.tint : undefined} size={30} />
+            <Icon
+              icon="community"
+              color={focused ? colors.tint : undefined}
+              size={30 * spacing.scale}
+            />
           ),
         }}
       />
@@ -86,7 +94,11 @@ export function DemoNavigator() {
           tabBarButton,
           tabBarLabel: translate("demoNavigator.podcastListTab"),
           tabBarIcon: ({ focused }) => (
-            <Icon icon="podcast" color={focused ? colors.tint : undefined} size={30} />
+            <Icon
+              icon="podcast"
+              color={focused ? colors.tint : undefined}
+              size={30 * spacing.scale}
+            />
           ),
         }}
       />
@@ -98,7 +110,11 @@ export function DemoNavigator() {
           tabBarLabel: translate("demoNavigator.debugTab"),
           tabBarButton,
           tabBarIcon: ({ focused }) => (
-            <Icon icon="debug" color={focused ? colors.tint : undefined} size={30} />
+            <Icon
+              icon="debug"
+              color={focused ? colors.tint : undefined}
+              size={30 * spacing.scale}
+            />
           ),
         }}
       />

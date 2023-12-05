@@ -42,7 +42,7 @@ export const DemoIcon: Demo = {
     >
       {Object.keys(iconRegistry).map((icon) => (
         <View key={icon} style={$iconTile}>
-          <Icon icon={icon as IconTypes} color={colors.tint} size={35} />
+          <Icon icon={icon as IconTypes} color={colors.tint} size={35 * spacing.scale} />
 
           <Text size="xs" style={$iconTileLabel}>
             {icon}
@@ -53,9 +53,9 @@ export const DemoIcon: Demo = {
 
     <DemoUseCase name="Size" description="There's a size prop." layout="row">
       <Icon icon="ladybug" containerStyle={$demoIconContainer} />
-      <Icon icon="ladybug" size={35} containerStyle={$demoIconContainer} />
-      <Icon icon="ladybug" size={50} containerStyle={$demoIconContainer} />
-      <Icon icon="ladybug" size={75} containerStyle={$demoIconContainer} />
+      <Icon icon="ladybug" size={35 * spacing.scale} containerStyle={$demoIconContainer} />
+      <Icon icon="ladybug" size={50 * spacing.scale} containerStyle={$demoIconContainer} />
+      <Icon icon="ladybug" size={75 * spacing.scale} containerStyle={$demoIconContainer} />
     </DemoUseCase>,
 
     <DemoUseCase name="Color" description="There's a color prop." layout="row">

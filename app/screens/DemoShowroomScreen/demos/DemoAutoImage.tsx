@@ -25,12 +25,12 @@ const $aspectRatioWidthExampleContainer: ViewStyle = {
 const $aspectRatioHeightExampleContainer: ViewStyle = {
   alignItems: "stretch",
   justifyContent: "space-between",
-  height: 130,
+  height: 130 * spacing.scale,
 }
 
 const $aspectRatioBox: ViewStyle & ImageStyle = {
-  borderRadius: 4,
-  borderWidth: 3,
+  borderRadius: 4 * spacing.scale,
+  borderWidth: 3 * spacing.scale,
   borderColor: colors.palette.secondary300,
   backgroundColor: colors.palette.neutral800,
 }
@@ -85,7 +85,7 @@ export const DemoAutoImage: Demo = {
         />
       </View>
 
-      <DemoDivider size={5} />
+      <DemoDivider size={5 * spacing.scale} />
 
       <View style={[$aspectRatioWidthExampleContainer, { height: 80 }]}>
         <View style={[$aspectRatioBox, { width: 60 }]} />
@@ -109,7 +109,7 @@ export const DemoAutoImage: Demo = {
         width: 60 / height: auto
       </Text>
 
-      <DemoDivider size={40} />
+      <DemoDivider size={40 * spacing.scale} />
 
       <View style={{ flexDirection: "row" }}>
         <View style={$aspectRatioHeightExampleContainer}>
@@ -156,7 +156,7 @@ export const DemoAutoImage: Demo = {
         width: auto / height: 32
       </Text>
 
-      <DemoDivider size={40} />
+      <DemoDivider size={40 * spacing.scale} />
 
       <View style={$aspectRatioWidthExampleContainer}>
         <Text
@@ -179,7 +179,7 @@ export const DemoAutoImage: Demo = {
         />
       </View>
 
-      <DemoDivider size={5} />
+      <DemoDivider size={5 * spacing.scale} />
 
       <View style={$aspectRatioWidthExampleContainer}>
         <View style={[$aspectRatioBox, { width: 60, height: 60 }]} />

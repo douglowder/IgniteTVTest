@@ -21,7 +21,11 @@ export function DrawerIconButton(props: DrawerIconButtonProps) {
   const { open, progress, ...PressableProps } = props
 
   const animatedContainerStyles = useAnimatedStyle(() => {
-    const translateX = interpolate(progress.value, [0, 1], [0, isRTL ? 60 : -60])
+    const translateX = interpolate(
+      progress.value,
+      [0, 1],
+      [0, isRTL ? 60 * spacing.scale : -60 * spacing.scale],
+    )
 
     return {
       transform: [{ translateX }],
@@ -46,7 +50,7 @@ export function DrawerIconButton(props: DrawerIconButtonProps) {
 
   const animatedMiddleBarStyles = useAnimatedStyle(() => {
     const backgroundColor = interpolateColor(progress.value, [0, 1], [colors.text, colors.tint])
-    const width = interpolate(progress.value, [0, 1], [18, 16])
+    const width = interpolate(progress.value, [0, 1], [18 * spacing.scale, 16 * spacing.scale])
 
     return {
       backgroundColor,
@@ -55,11 +59,11 @@ export function DrawerIconButton(props: DrawerIconButtonProps) {
   })
 
   const animatedBottomBarStyles = useAnimatedStyle(() => {
-    const marginTop = interpolate(progress.value, [0, 1], [4, 2])
+    const marginTop = interpolate(progress.value, [0, 1], [4 * spacing.scale, 2 * spacing.scale])
     const backgroundColor = interpolateColor(progress.value, [0, 1], [colors.text, colors.tint])
-    const marginStart = interpolate(progress.value, [0, 1], [0, -11.5])
+    const marginStart = interpolate(progress.value, [0, 1], [0, -11.5 * spacing.scale])
     const rotate = interpolate(progress.value, [0, 1], [0, isRTL ? -45 : 45])
-    const width = interpolate(progress.value, [0, 1], [18, 12])
+    const width = interpolate(progress.value, [0, 1], [18 * spacing.scale, 12 * spacing.scale])
 
     return {
       backgroundColor,
@@ -85,13 +89,13 @@ export function DrawerIconButton(props: DrawerIconButtonProps) {
   )
 }
 
-const barHeight = 2
+const barHeight = 2 * spacing.scale
 
 const $container: ViewStyle = {
   alignItems: "center",
-  height: 56,
+  height: 56 * spacing.scale,
   justifyContent: "center",
-  width: 56,
+  width: 56 * spacing.scale,
 }
 
 const $topBar: ViewStyle = {

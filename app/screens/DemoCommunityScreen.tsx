@@ -129,8 +129,8 @@ const $logoContainer: ViewStyle = {
 }
 
 const $logo: ImageStyle = {
-  height: 38,
-  width: 38,
+  height: 38 * spacing.scale,
+  width: 38 * spacing.scale,
 }
 
 // @demo remove-file
