@@ -16,7 +16,7 @@ Currently includes:
 
 ## TV quick start
 
-This app uses Expo SDK 50 alpha packages that will compile and run on Apple TV and Android TV, and an early version of the config plugin `@react-native-tvos/config-tv` that will cause prebuild to configure the iOS and Android folders for TV builds.
+This app uses the Expo SDK 50 preview, that will compile and run on Apple TV and Android TV, and an early version of the config plugin `@react-native-tvos/config-tv` that will cause prebuild to configure the iOS and Android folders for TV builds.
 
 To try TV builds:
 
